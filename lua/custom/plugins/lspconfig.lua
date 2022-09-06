@@ -14,6 +14,8 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#intelephense
+-- https://daniele.tech/2021/07/neovim-lsp-with-intelephense-for-php-and-wordpress-and-others/
 lspconfig["intelephense"].setup {
   on_attach = on_attach,
   capabilities = capabilities,

@@ -15,10 +15,10 @@ return {
   ["elkowar/yuck.vim"] = { ft = "yuck" },
 
   ["max397574/better-escape.nvim"] = {
-     event = "InsertEnter",
-     config = function()
+    event = "InsertEnter",
+    config = function()
         require("better_escape").setup()
-     end,
+    end,
   },
 
   -- https://git.sr.ht/~whynothugo/lsp_lines.nvim
@@ -42,10 +42,25 @@ return {
   -- need run :PackerSync
   -- override core config
   ["folke/which-key.nvim"] = {
-     disable = false,
+    disable = false,
   },
   ["goolord/alpha-nvim"] = {
     disable = false,
   },
+
+  -- https://github.com/nvim-telescope/telescope-project.nvim#workspace-mappings-insert-mode
+  ["nvim-telescope/telescope-project.nvim"] = {
+    disable = false,
+    -- after = "telescope.nvim",
+    config = function ()
+      -- require'telescope'.load_extension('project')
+    end
+  },
+  ["nvim-telescope/telescope.nvim"] = {
+    config = function()
+      require "plugins.configs.telescope"
+      require "custom.plugins.telescope"
+    end,
+  }
 }
 

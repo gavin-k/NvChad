@@ -1,4 +1,5 @@
 -- lua/custom/mappings 
+-- https://nvchad.com/config/Mappings
 local M = {}
 
 -- add this table only when you want to disable default keys
@@ -31,5 +32,12 @@ M.hop = {
 }
 
 M.lsp_config = {}
+
+M.telescope_project = {
+  n = {
+    -- https://github.com/nvim-telescope/telescope-project.nvim#available-options
+    ["<leader>."] = {"<cmd> lua require'telescope'.extensions.project.project{ display_type = 'full' } <CR>", "Telescope project"},
+  }
+}
 
 return M

@@ -21,3 +21,18 @@ if g.neovide ~= nil then
 
 end
 -- For neovide end
+
+-- For lsp_lines begin
+-- don't work
+-- vim.diagnostic.config({
+--   virtual_text = false
+-- })
+
+-- https://github.com/neovim/nvim-lspconfig/issues/662#issuecomment-759442828
+-- vim.diagnostic.config({virtual_text = false})
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = false
+    }
+)
+-- For lsp_lines end
