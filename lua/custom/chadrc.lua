@@ -35,7 +35,20 @@ M.plugins = {
       },
       -- this will override the default config. can't use theme etc.
       -- extensions_list = { "project" } ,
-    }
+    },
+    ["goolord/alpha-nvim"] = {
+      buttons = {
+        val = {
+          require'custom.helper'.button("SPC f f", "  Find File  ", ":Telescope find_files<CR>"),
+          require'custom.helper'.button("SPC f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
+          require'custom.helper'.button("SPC f w", "  Find Word  ", ":Telescope live_grep<CR>"),
+          require'custom.helper'.button("SPC b m", "  Bookmarks  ", ":Telescope marks<CR>"),
+          require'custom.helper'.button("SPC t h", "  Themes  ", ":Telescope themes<CR>"),
+          require'custom.helper'.button("SPC p p", "  Projects  ", ":Telescope project<CR>"),
+          require'custom.helper'.button("SPC e s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
+        },
+      }
+    },
   },
 }
 
