@@ -41,6 +41,28 @@ M.telescope_project = {
     ["<leader>pp"] = { "<cmd> Telescope project<CR>", "pick project" },
   }
 }
+
+M.dap = {
+  -- https://alpha2phi.medium.com/neovim-lsp-and-dap-using-lua-3fb24610ac9f
+  n = {
+    ['<leader>dc'] = {'<cmd>lua require"dap".continue()<CR>', "Dap Continue/Resume"},
+    ['<leader>dsv'] = {'<cmd>lua require"dap".step_over()<CR>', "Dap Step Over"},
+    ['<leader>dsi'] = {'<cmd>lua require"dap".step_into()<CR>', "Dap Step Into"},
+    ['<leader>dso'] = {'<cmd>lua require"dap".step_out()<CR>', "Dap Step Out"},
+    ['<leader>dtb'] = {'<cmd>lua require"dap".toggle_breakpoint()<CR>', "Dap Toggle Breakpoint"},
+    ['<leader>dsbr'] = {'<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>', "Dap Breakpoint Condition"},
+    ['<leader>dsbm'] = {'<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>', "Dap Breakpoint Log Message"},
+    ['<leader>dro'] = {'<cmd>lua require"dap".repl.open()<CR>', "Dap open Repl"},
+    ['<leader>drl'] = {'<cmd>lua require"dap".repl.run_last()<CR>', "Dap Run Last Repl"},
+
+    -- telescope-dap
+    ['<leader>dcc'] = {'<cmd>lua require"telescope".extensions.dap.commands{}<CR>', "Telescope Dap Commands"},
+    ['<leader>dco'] = {'<cmd>lua require"telescope".extensions.dap.configurations{}<CR>', "Telescope Dap Configurations"},
+    ['<leader>dlb'] = {'<cmd>lua require"telescope".extensions.dap.list_breakpoints{}<CR>', "Telescope Dap List Breakpoints"},
+    ['<leader>dv'] = {'<cmd>lua require"telescope".extensions.dap.variables{}<CR>', "Telescope Dap Variables"},
+    ['<leader>df'] = {'<cmd>lua require"telescope".extensions.dap.frames{}<CR>', "Telescope Dap Frames"},
+  },
+}
 -- lua print require'telescope'.extensions
 
 return M

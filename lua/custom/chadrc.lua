@@ -37,9 +37,27 @@ M.plugins = {
       -- extensions_list = { "project" } ,
     },
     ["goolord/alpha-nvim"] = {
+      header = {
+        type = "text",
+        val = {
+          "██████   ██████      ██ ████████     ███    ██  ██████  ██     ██ ",
+          "██   ██ ██    ██     ██    ██        ████   ██ ██    ██ ██     ██ ",
+          "██   ██ ██    ██     ██    ██        ██ ██  ██ ██    ██ ██  █  ██ ",
+          "██   ██ ██    ██     ██    ██        ██  ██ ██ ██    ██ ██ ███ ██ ",
+          "██████   ██████      ██    ██        ██   ████  ██████   ███ ███  ",
+          "                                                                  ",
+          "                                                                  ",
+        },
+        opts = {
+          position = "center",
+          hl = "AlphaHeader",
+        },
+      },
       buttons = {
         val = {
-          require'custom.helper'.button("SPC f f", "  Find File  ", ":Telescope find_files<CR>"),
+          -- button icon; https://www.nerdfonts.com/cheat-sheet
+          -- require'custom.helper'.button("SPC f f", "  Find File  ", ":Telescope find_files<CR>"),
+          require'custom.helper'.button("SPC f f", "  Find File  ", ":Telescope find_files<CR>"),
           require'custom.helper'.button("SPC f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
           require'custom.helper'.button("SPC f w", "  Find Word  ", ":Telescope live_grep<CR>"),
           require'custom.helper'.button("SPC b m", "  Bookmarks  ", ":Telescope marks<CR>"),

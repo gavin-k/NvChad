@@ -16,6 +16,7 @@ if g.neovide ~= nil then
     g.neovide_background_color = '#0f1117' .. string.format('%x', math.floor(255 * g.transparency))
 
     g.neovide_input_macos_alt_is_meta = true
+    g.neovide_input_use_logo = false
 
 end
 -- For neovide end

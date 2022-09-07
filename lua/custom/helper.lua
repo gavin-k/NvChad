@@ -8,7 +8,7 @@ function helper.dump(o)
             if type(k) ~= 'number' then
                 k = '"' .. k .. '"'
             end
-            s = s .. '[' .. k .. '] = ' .. dump(v) .. ','
+            s = s .. '[' .. k .. '] = ' .. helper.dump(v) .. ','
         end
         return s .. '} '
     else

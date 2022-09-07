@@ -5,7 +5,7 @@ if not present then
   return
 end
 
-local extensions = {"project"}
+local extensions = {"project", "dap"}
 
 pcall(function()
   for _, ext in ipairs(extensions) do

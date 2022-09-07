@@ -61,6 +61,20 @@ return {
       require "plugins.configs.telescope"
       require "custom.plugins.telescope"
     end,
+  },
+
+  -- support DAP. clients: https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/ 
+  ["mfussenegger/nvim-dap"] = {
+    disable = false,
+    config = function ()
+      require "custom.plugins.nvim-dap"
+    end
+ },
+  ["nvim-telescope/telescope-dap.nvim"] = {
+    disable = false,
+    -- config = function ()
+    --   require "custom.plugins.dap"
+    -- end
   }
 }
 
