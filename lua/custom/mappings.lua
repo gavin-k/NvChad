@@ -36,8 +36,11 @@ M.lsp_config = {}
 M.telescope_project = {
   n = {
     -- https://github.com/nvim-telescope/telescope-project.nvim#available-options
-    ["<leader>."] = {"<cmd> lua require'telescope'.extensions.project.project{ display_type = 'full' } <CR>", "Telescope project"},
+    -- ["<leader>."] = {"<cmd> lua require'telescope'.extensions.project.project{ display_type = 'full' } <CR>", "Telescope project"},
+    ["<leader>."] = {"<cmd> lua require'telescope'.extensions.project.project(vim.tbl_deep_extend('force', require'telescope.themes'.get_dropdown(), {display_type = 'full'})) <CR>", "Telescope project"},
+    ["<leader>pp"] = { "<cmd> Telescope project<CR>", "pick project" },
   }
 }
+-- lua print require'telescope'.extensions
 
 return M

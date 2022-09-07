@@ -32,7 +32,9 @@ M.plugins = {
           hidden_files = true, -- default: false
           theme = "dropdown"
         }
-      }
+      },
+      -- this will override the default config. can't use theme etc.
+      -- extensions_list = { "project" } ,
     }
   },
 }

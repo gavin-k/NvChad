@@ -1,10 +1,14 @@
 -- custom.plugins.telescope
+local present, telescope = pcall(require, "telescope")
 
-local telescope = require "telescope"
-local extensions = {"project"}
-
-for _, ext in ipairs(extensions) do
-  telescope.load_extension(ext)
+if not present then
+  return
 end
 
--- require'telescope'.extensions.project.project{ display_type = 'full' }
+local extensions = {"project"}
+
+pcall(function()
+  for _, ext in ipairs(extensions) do
+    telescope.load_extension(ext)
+  end
+end)
