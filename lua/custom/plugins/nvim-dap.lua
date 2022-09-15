@@ -1,13 +1,21 @@
-local present, dap = pcall(require, "dap")
-
-if not present then
-  return
+local dap, dapui = require("dap"), require("dapui")
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
 end
 
-require'custom.dap.php'
+require('dap').set_log_level('DEBUG')
 
--- require'custom.dap.rust'
+
+require'custom.daps.php'
+
+-- require'custom.daps.rust'
 --
--- require'custom.dap.python'
+-- require'custom.daps.python'
 --
--- require'custom.dap.go'
+-- require'custom.daps.go'

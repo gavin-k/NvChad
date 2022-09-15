@@ -38,17 +38,21 @@ M.telescope_project = {
     -- https://github.com/nvim-telescope/telescope-project.nvim#available-options
     -- ["<leader>."] = {"<cmd> lua require'telescope'.extensions.project.project{ display_type = 'full' } <CR>", "Telescope project"},
     ["<leader>."] = {"<cmd> lua require'telescope'.extensions.project.project(vim.tbl_deep_extend('force', require'telescope.themes'.get_dropdown(), {display_type = 'full'})) <CR>", "Telescope project"},
-    ["<leader>pp"] = { "<cmd> Telescope project<CR>", "pick project" },
+    ["<leader>pp"] = { "<cmd> Telescope project display_type=full <CR>", "pick project" },
   }
 }
 
 M.dap = {
   -- https://alpha2phi.medium.com/neovim-lsp-and-dap-using-lua-3fb24610ac9f
   n = {
-    ['<leader>dc'] = {'<cmd>lua require"dap".continue()<CR>', "Dap Continue/Resume"},
+    ['<leader>dcr'] = {'<cmd>lua require"dap".continue()<CR>', "Dap Continue/Resume"},
+    ['<F5>'] = {'<cmd>lua require"dap".continue()<CR>', "Dap Continue/Resume"},
     ['<leader>dsv'] = {'<cmd>lua require"dap".step_over()<CR>', "Dap Step Over"},
+    ['<F10>'] = {'<cmd>lua require"dap".step_over()<CR>', "Dap Step Over"},
     ['<leader>dsi'] = {'<cmd>lua require"dap".step_into()<CR>', "Dap Step Into"},
+    ['<F11>'] = {'<cmd>lua require"dap".step_into()<CR>', "Dap Step Into"},
     ['<leader>dso'] = {'<cmd>lua require"dap".step_out()<CR>', "Dap Step Out"},
+    ['<F12>'] = {'<cmd>lua require"dap".step_out()<CR>', "Dap Step Out"},
     ['<leader>dtb'] = {'<cmd>lua require"dap".toggle_breakpoint()<CR>', "Dap Toggle Breakpoint"},
     ['<leader>dsbr'] = {'<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>', "Dap Breakpoint Condition"},
     ['<leader>dsbm'] = {'<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>', "Dap Breakpoint Log Message"},

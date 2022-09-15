@@ -68,13 +68,20 @@ return {
     disable = false,
     config = function ()
       require "custom.plugins.nvim-dap"
-    end
- },
+    end,
+  },
+  ["rcarriga/nvim-dap-ui"] = {
+    disable = false,
+    requires = {"mfussenegger/nvim-dap"},
+    config = function ()
+      require "custom.plugins.dapui"
+    end,
+  },
   ["nvim-telescope/telescope-dap.nvim"] = {
     disable = false,
     -- config = function ()
     --   require "custom.plugins.dap"
     -- end
-  }
+  },
 }
 
