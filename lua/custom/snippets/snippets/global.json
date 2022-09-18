@@ -1,0 +1,7 @@
+{
+  "copyright": {
+    "prefix": "cp",
+    "body": ["Copyright (c) ${CURRENT_YEAR} ${0:Author}. All Rights Reserved. For Alpnut"],
+    "description": "Snippet to put copyright"
+  }
+}

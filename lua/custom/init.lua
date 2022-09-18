@@ -33,3 +33,27 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
     virtual_text = false
 })
 -- For lsp_lines end
+
+
+-- For diff language setting begin
+-- https://www.reddit.com/r/neovim/comments/vu1y6e/comment/ifc03ot/?utm_source=share&utm_medium=web2x&context=3
+-- https://www.reddit.com/r/neovim/comments/vkn2e7/change_indent_depending_on_file_type_in_lua/
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { "*" },
+  -- command = "setlocal shiftwidth=2 tabstop=2",
+  callback = function (args)
+    local ft = vim.bo[args.buf].filetype
+    if ft == "python" then
+      -- require("spacing/four")
+    elseif ft == "php" then
+      require("custom.coding.php")
+    elseif ft == "lua" then
+      -- do something else 
+      -- require("spacing/two")
+    end
+  end,
+})
+
+-- For diff lang end
+
+

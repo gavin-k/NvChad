@@ -1,0 +1,10 @@
+{
+  "transation": {
+    "prefix": "tra",
+    "body": [
+      "\\DB::beginTransaction();",
+      ""
+    ],
+    "description": "Laravel begin Transation"
+  }
+}
