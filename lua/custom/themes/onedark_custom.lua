@@ -37,11 +37,13 @@ M.base_30 = {
 }
 
 M.base_16 = {
-  -- base00 = "#1e222a", -- 真服气，最后这个才改过来
+  -- base00 = "#1e222a",
   -- base00 = "#000000",
   base00 = "#1e222a",
-  base01 = "#353b45",
-  base02 = "#3e4451",
+  -- base01 = "#353b45",
+  base01 = "none",
+  -- base02 = "#3e4451",
+  base02 = "none",
   base03 = "#545862",
   base04 = "#565c64",
   base05 = "#abb2bf",
@@ -59,6 +61,51 @@ M.base_16 = {
 
 vim.opt.bg = "dark"
 
+M.polish_hl = {
+  TbLineThemeToggleBtn = { fg = M.base_30.black, bg = M.base_30.white },
+  Normal = {
+      bg = "none",
+      ctermbg = "none",
+  },
+  NvimTreeNormal = {
+      bg = "none",
+  },
+  NvimTreeNormalNC = {
+      bg = "none",
+  },
+  TabLine = {
+      bg = "none",
+      ctermbg = "none",
+  },
+  TabLineSel = {
+      bg = "none",
+      ctermbg = "none",
+  },
+  TbLineTabCloseBtn = {bg = "none"},
+  -- TbLineThemeToggleBtn = {bg = "none"},
+  -- WildMenu = {bg = "none",},
+  TabLineFill = {
+      bg = "none",
+      ctermbg = "none",
+      ctermfg = "none",
+  },
+  StatusLine = {
+      bg = "none",
+  },
+  StatusLineNC = {
+      bg = "none",
+  },
+  LineNr = {
+      -- bg = "blue",
+      fg = "#566c64",
+  },
+  -- NvimTreeVertSplit = {
+  --     bg = "none",
+  -- },
+  NvimTreeWinSeparator = {
+      bg = "none",
+  },
+}
 M = require("base46").override_theme(M, "onedark_custom")
 
 return M

@@ -20,6 +20,15 @@ if g.neovide ~= nil then
 
 end
 -- For neovide end
+--
+-- For appearance begin
+-- can't work on neovide
+-- vim.opt.guifont = {"Consolas", "h20"}
+vim.opt.guifont = "Consolas:h18"
+-- vim.cmd([[
+-- set guifont = "Consolas:h20"
+-- ]])
+-- For appearance end
 
 -- For lsp_lines begin
 -- don't work

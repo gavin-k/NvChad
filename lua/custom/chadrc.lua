@@ -9,7 +9,7 @@ M.ui = {
   -- theme = "gruvchad",
   -- theme = "onedark",
   -- theme = "siduck",
-  theme = "onedark_custom",
+  theme = "decay",
   theme_toggle = { "onedark_custom", "gruvbox_light_custom" },
   -- https://nvchad.github.io/config/theming
   hl_override = require "custom.highlights"
