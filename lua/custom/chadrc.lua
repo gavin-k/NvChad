@@ -1,5 +1,9 @@
 -- Just an example, supposed to be placed in /lua/custom/
-local env = require "custom.env"
+-- local env = require "custom.env"
+local present, env = pcall(require, "custom.env")
+if not present then
+  env = require "custom.env-example"
+end
 local M = {}
 
 -- make sure you maintain the structure of `core/default_config.lua` here,
