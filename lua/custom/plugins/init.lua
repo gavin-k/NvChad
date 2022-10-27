@@ -2,14 +2,14 @@
 
 return {
   ["phaazon/hop.nvim"] = {
-    branch = 'v2', -- optional but strongly recommended
+    branch = "v2", -- optional but strongly recommended
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
-      require'hop'.setup {
-        keys = 'etovxqpdygfblzhckisuran',
+      require("hop").setup {
+        keys = "etovxqpdygfblzhckisuran",
         multi_windows = true,
       }
-    end
+    end,
   },
 
   ["elkowar/yuck.vim"] = { ft = "yuck" },
@@ -17,7 +17,7 @@ return {
   ["max397574/better-escape.nvim"] = {
     event = "InsertEnter",
     config = function()
-        require("better_escape").setup()
+      require("better_escape").setup()
     end,
   },
 
@@ -26,7 +26,7 @@ return {
   ["https://git.sr.ht/~whynothugo/lsp_lines.nvim"] = {
     config = function()
       require("lsp_lines").setup()
-    end
+    end,
   },
 
   -- https://nvchad.com/config/Lsp%20stuff
@@ -52,9 +52,9 @@ return {
   ["nvim-telescope/telescope-project.nvim"] = {
     disable = false,
     -- after = "telescope.nvim",
-    config = function ()
+    config = function()
       -- require'telescope'.load_extension('project')
-    end
+    end,
   },
   ["nvim-telescope/telescope.nvim"] = {
     config = function()
@@ -63,17 +63,17 @@ return {
     end,
   },
 
-  -- support DAP. clients: https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/ 
+  -- support DAP. clients: https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/
   ["mfussenegger/nvim-dap"] = {
     disable = false,
-    config = function ()
+    config = function()
       require "custom.plugins.nvim-dap"
     end,
   },
   ["rcarriga/nvim-dap-ui"] = {
     disable = false,
-    requires = {"mfussenegger/nvim-dap"},
-    config = function ()
+    requires = { "mfussenegger/nvim-dap" },
+    config = function()
       require "custom.plugins.dapui"
     end,
   },
@@ -83,5 +83,14 @@ return {
     --   require "custom.plugins.dap"
     -- end
   },
-}
 
+  -- support auto formatting
+  ["jose-elias-alvarez/null-ls.nvim"] = {
+    disable = false,
+    after = "nvim-lspconfig",
+    config = function()
+      require("custom.plugins.null-ls").setup()
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
+  },
+}
