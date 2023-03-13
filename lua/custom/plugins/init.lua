@@ -68,7 +68,9 @@ return {
         "json-lsp",
         "php-cs-fixer",
         "phpcs",
+        "deno",
         "prettier",
+        "shfmt",
         "shellcheck",
         "stylua", -- format lua code
         "clangd",
@@ -116,6 +118,11 @@ return {
   ["https://git.sr.ht/~whynothugo/lsp_lines.nvim"] = {
     config = function()
       require("lsp_lines").setup()
+      -- Cant disable virtual_text
+      -- Disable virtual_text since it's redundant due to lsp_lines.
+      vim.diagnostic.config {
+        virtual_text = false,
+      }
     end,
   },
 
